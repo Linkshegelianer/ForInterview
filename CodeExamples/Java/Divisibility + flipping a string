@@ -40,31 +40,28 @@ public class App {
     }
 }
 
-Переворот строки 1: 
-public static String reverse(String str) {
-    var i = 0;
-    // Нейтральный элемент для строк это пустая строка
-    var result = "";
-    while (i < str.length()) {
-        // Соединяем в обратном порядке
-        result = str.charAt(i) + result;
-        i = i + 1;
-    }
-
-    return result;
-}
-
-
-Переворот строки 2 (обход строки не с первого элемента по последний, а наоборот):
+Переворот строки с первого символа и с последнего (результат один и тот же):
 public class App {
-    public static String reverse(String str) {
+    public static void main(String[] args) {
+        System.out.println(App.reverseFromFirst("something something"));
+        System.out.println(App.reverseFromLast("something something"));
+    }
+    public static String reverseFromFirst(String str) {
+        var i = 0;
+        var result = "";
+        while (i < str.length()) {
+            result = str.charAt(i) + result;
+            i += 1;
+        }
+        return result;
+    }
+    public static String reverseFromLast(String str) {
         var i = str.length() - 1;
         var result = "";
         while (i >= 0) {
             result = result + str.charAt(i);
-            i = i - 1;
+            i -= 1;
         }
-
         return result;
     }
 }
